@@ -1,0 +1,41 @@
+.main-404{
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    height: 80%;
+    min-height: 500px;
+    .main-img{
+      flex: 0 0 62.5%;
+      width: 62.5%;
+      padding-right: 152px;
+      zoom: 1;
+      .bg-img{
+        height: 360px;
+        width: 100%;
+        max-width: 430px;
+        float: right;
+        background: url(./404.svg) no-repeat;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+      }
+    }
+    .txt{
+      flex: auto;
+      h1{
+        color: #434e59;
+        font-size: 72px;
+        font-weight: 600;
+        line-height: 72px;
+        margin-bottom: 24px;
+      }
+      .des{
+        color: rgba(0,0,0,.45);
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  
