@@ -28,7 +28,8 @@
     或者
     yarn build
 ## 使用docker
-    待完善
+    增加docker打包配置,使用如下:
+    sh run.sh
 
 
 # 后台服务
