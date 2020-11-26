@@ -19,7 +19,7 @@ export const baseURL = () =>{
 }
 
 const descKey = CryptoJS.enc.Utf8.parse("caicai");
-const IV = CryptoJS.enc.Utf8.parse('caicaiBlog');// 偏移量  
+const IV = CryptoJS.enc.Utf8.parse('caicaiAdmin');// 偏移量  
 // des 加密
 export function encryptByDes(message){
     var keyHex = CryptoJS.enc.Utf8.parse(descKey);
