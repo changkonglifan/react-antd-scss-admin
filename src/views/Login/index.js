@@ -2,7 +2,7 @@
  * @Author: XuYang 
  * @Date: 2020-11-19 14:10:32 
  * @Last Modified by: XuYang
- * @Last Modified time: 2020-11-24 19:05:21
+ * @Last Modified time: 2020-11-26 10:58:39
  * 登录
  */
 import React from 'react'
@@ -18,6 +18,8 @@ import { useHistory } from 'react-router-dom'
 import './index.scss';
 import { enCodePassword } from '../../utils/config';
 import { setCookie } from '../../utils/index'
+import { useDispatch } from 'react-redux';
+import { setLoginInfo } from '../../action/login';
 const FormItem = Form.Item;
 
 
@@ -28,6 +30,7 @@ const formItemLayout = {
 const Login = () =>{
     const [form] = Form.useForm();// 表单
     const history = useHistory();
+    const dispatch = useDispatch();
 
     /**
      * 登录按钮
@@ -46,6 +49,7 @@ const Login = () =>{
                 setCookie('name', res.data.account.name);
                 setCookie('avatar', res.data.account.avatar);
                 setCookie('token', res.data.token);
+                dispatch(setLoginInfo({name: res.data.account.name, avatar: res.data.account.avatar}));
             }else {
                 message.error(res.msg);
             }

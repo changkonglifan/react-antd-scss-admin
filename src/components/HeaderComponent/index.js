@@ -2,14 +2,18 @@
  * @Author: XuYang 
  * @Date: 2020-11-23 18:25:05 
  * @Last Modified by: XuYang
- * @Last Modified time: 2020-11-24 19:03:18
+ * @Last Modified time: 2020-11-26 11:25:46
  * 头部栏
  */
 import React, { useState } from 'react'
 import { Dropdown, Layout, Menu, Avatar, Modal, message } from 'antd';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 import { getCookie } from '../../utils';
 import { logout } from '../../api/user'
+// import PropTypes from 'prop-types'
+import logo from '../../statics/logo.png'
+import './index.scss'
 import {
     UnlockOutlined,
     LogoutOutlined
@@ -19,6 +23,7 @@ const { Header } = Layout;
 
 const HeaderComponent = () =>{
     const history = useHistory();
+    const {loginInfo}  = useSelector(state => state.login)
     const [isShowChangePSw, setShowChangePsw] = useState(false); //是否显示修改密码弹窗
      /**
      * 菜单选择
@@ -39,6 +44,8 @@ const HeaderComponent = () =>{
             case "changePsw":
                 setShowChangePsw(true);
                 break;
+            default: 
+                return;
 
         }
     }
@@ -63,7 +70,7 @@ const HeaderComponent = () =>{
     return (
         <Header className='layoutHeader'>
             <div className="logo" >
-                <span>后台管理</span>
+                <img src={logo}></img><span>后台管理</span>
             </div>
             <div className='userInfo'>
                 <Dropdown className='drop' overlay={
@@ -73,8 +80,8 @@ const HeaderComponent = () =>{
                     </Menu>
                 }>
                     <div>
-                        <Avatar src={getCookie('avatar')}></Avatar>
-                        <span className='user'>{getCookie('name')}</span>
+                        <Avatar src={loginInfo.avatar || getCookie('avatar')}></Avatar>
+                        <span className='user'>{loginInfo.name ||  getCookie('name')}</span>
                     </div>
                 </Dropdown>
             </div>
@@ -86,5 +93,7 @@ const HeaderComponent = () =>{
             }
         </Header>
     )
+}
+HeaderComponent.propTypes = {
 }
 export default HeaderComponent;

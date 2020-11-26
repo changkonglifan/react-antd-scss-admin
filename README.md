@@ -30,6 +30,9 @@
 ## 使用docker
     增加docker打包配置,使用如下:
     sh run.sh
+### 构建docker基础镜像
+    buildDockerBase文件夹
+    sh build.sh
 
 
 # 后台服务
