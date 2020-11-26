@@ -2,7 +2,7 @@
  * @Author: XuYang 
  * @Date: 2020-11-19 14:10:32 
  * @Last Modified by: XuYang
- * @Last Modified time: 2020-11-26 10:58:39
+ * @Last Modified time: 2020-11-26 15:50:17
  * 登录
  */
 import React from 'react'
@@ -21,7 +21,6 @@ import { setCookie } from '../../utils/index'
 import { useDispatch } from 'react-redux';
 import { setLoginInfo } from '../../action/login';
 const FormItem = Form.Item;
-
 
 const formItemLayout = {
     labelCol: { span: 0 },
