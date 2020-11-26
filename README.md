@@ -28,6 +28,7 @@
     或者
     yarn build
 ## 使用docker
+### docker打包项目
     增加docker打包配置,使用如下:
     sh run.sh
 ### 构建docker基础镜像
