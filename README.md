@@ -38,4 +38,7 @@
 
 # 后台服务
 ## 后台使用java spring boot + mybits
-    后台新手, 代码后续公开
+    
+可跳转到 [项目地址](https://github.com/changkonglifan/admin_service)
+
+[git地址](git@github.com:changkonglifan/admin_service.git) git@github.com:changkonglifan/admin_service.git
