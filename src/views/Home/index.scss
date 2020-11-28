@@ -1,3 +1,28 @@
 .home{
     padding: 20px;
+    height: 100%;
+    text-align: left;
+    .home-content{
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        height: 100%;
+        .charts{
+            padding: 20px;
+            margin-top: 10px;
+            flex: 1;
+            background-color: #ffffff;
+            p{
+                text-align: left;
+                font-weight: bold;
+                font-size: 24px;
+            }
+        }
+    }
+
+}
+#chartsLeft,#chartRight{
+    height: 600px;
+    width: 80%;
+    padding-top: 20px;
 }
